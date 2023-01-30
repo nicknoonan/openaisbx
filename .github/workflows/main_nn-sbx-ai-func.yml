@@ -6,7 +6,7 @@ name: Build and deploy dotnet core project to Azure Function App - nn-sbx-ai-fun
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 
 env:
