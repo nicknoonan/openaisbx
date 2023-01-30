@@ -30,9 +30,6 @@ jobs:
         run: |
           pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
           ls
-
-
-          
           dotnet build --configuration Release
           popd
 
@@ -42,6 +39,6 @@ jobs:
         with:
           app-name: 'nn-sbx-ai-func'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ImagesFunction/bin/Release/net6.0'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_36CC353B5B5E4595B9023291321ECCC8 }}
 
