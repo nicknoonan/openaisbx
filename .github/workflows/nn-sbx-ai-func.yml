@@ -20,6 +20,12 @@ jobs:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v2
 
+      # If you want to use Azure RBAC instead of Publish Profile, then uncomment the task below
+      - name: 'Login via Azure CLI'
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_RBAC_CREDENTIALS }} # set up AZURE_RBAC_CREDENTIALS secrets in your repository
+
       - name: Setup DotNet ${{ env.DOTNET_VERSION }} Environment
         uses: actions/setup-dotnet@v1
         with:
@@ -40,5 +46,4 @@ jobs:
           app-name: 'nn-sbx-ai-func'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ImagesFunction/bin/Release/net6.0'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_36CC353B5B5E4595B9023291321ECCC8 }}
 
