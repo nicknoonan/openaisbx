@@ -44,5 +44,5 @@ jobs:
         with:
           app-name: 'nn-sbx-ai-func'
           slot-name: 'Production'
-          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ImagesFunction/bin/Release/net6.0'
+          package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/openaisbx-func/bin/Release/net6.0'
 
